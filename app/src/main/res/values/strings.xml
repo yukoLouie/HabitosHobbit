@@ -1,0 +1,53 @@
+<resources>
+    <!-- General -->
+    <string name="app_name">habitosHobbitses</string>
+    <string name="app_logo">Logo de la aplicación</string>
+    <string name="slogan">"Monitorea tus hábitos diarios y mejora tu vida"</string>
+
+    <!-- Login -->
+    <string name="bienvenida">Bienvenido</string>
+    <string name="btn_inicio">Iniciar Sesión</string>
+    <string name="hint_correo">Correo electrónico</string>
+    <string name="hint_contraseña">Contraseña</string>
+    <string name="registrarse">¿No tienes cuenta? Regístrate aquí</string>
+
+    <!-- Registro -->
+    <string name="btn_registrar">Registrarse</string>
+    <string name="hint_nombre_usuario">Nombre</string>
+    <string name="hint_confirmar_contraseña">Confirmar Contraseña</string>
+    <string name="volver_login">Volver al Login</string>
+
+    <!-- Pantalla Principal -->
+    <string name="lista_habitos">Mis Hábitos</string>
+    <string name="estado_completado">Completado</string>
+    <string name="estado_pendiente">Pendiente</string>
+    <string name="grafica_diaria">Gráfica de Hábitos Completados</string>
+    <string name="btn_agregar_habito">Añadir Hábito</string>
+
+    <!-- Añadir/Editar Hábito -->
+    <string name="hint_nombre_habito">Nombre del hábito</string>
+    <string name="hint_descripcion">Descripción (opcional)</string>
+    <string name="hint_frecuencia">Frecuencia semanal</string>
+    <string name="hint_hora_recordatorio">Hora de recordatorio</string>
+    <string name="seleccionar_icono_color">Seleccionar Ícono o Color</string>
+    <string name="btn_guardar">Guardar</string>
+    <string name="btn_cancelar">Cancelar</string>
+
+    <!-- Progreso -->
+    <string name="progreso_semanal">Progreso Semanal</string>
+    <string name="progreso_mensual">Progreso Mensual</string>
+    <string name="filtrar_por_fecha">Filtrar por fecha</string>
+
+
+        <string name="register_title">Registrar Cuenta</string>
+        <string name="name_hint">Nombre</string>
+        <string name="email_hint">Correo Electrónico</string>
+        <string name="password_hint">Contraseña</string>
+        <string name="register_button_text">Registrarse</string>
+
+    <string name="btnInicio">Iniciar Sesión</string>
+    <string name="btnRegistrar">Registrar</string>
+   <string name="btnGuardar">Guardar</string>
+    <string name="btnCancelar">Cancelar</string>
+
+</resources>
