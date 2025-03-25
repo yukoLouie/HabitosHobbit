@@ -39,15 +39,16 @@
     <string name="filtrar_por_fecha">Filtrar por fecha</string>
 
 
-        <string name="register_title">Registrar Cuenta</string>
-        <string name="name_hint">Nombre</string>
-        <string name="email_hint">Correo Electrónico</string>
-        <string name="password_hint">Contraseña</string>
-        <string name="register_button_text">Registrarse</string>
+    <string name="register_title">Registrar Cuenta</string>
+    <string name="name_hint">Nombre</string>
+    <string name="email_hint">Correo Electrónico</string>
+    <string name="password_hint">Contraseña</string>
+    <string name="confirm_password_hint">Confirmar Contraseña</string>
+    <string name="register_button_text">Registrarse</string>
 
     <string name="btnInicio">Iniciar Sesión</string>
     <string name="btnRegistrar">Registrar</string>
-   <string name="btnGuardar">Guardar</string>
+    <string name="btnGuardar">Guardar</string>
     <string name="btnCancelar">Cancelar</string>
 
 </resources>

@@ -44,6 +44,14 @@
         android:hint="@string/password_hint"
         android:inputType="textPassword"
         android:layout_marginBottom="16dp" />
+    <!-- Campo para confirmar contraseña -->
+    <EditText
+        android:id="@+id/et_confirm_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/confirm_password_hint"
+        android:inputType="textPassword"
+        android:layout_marginBottom="16dp" />
 
     <!-- Botón para registrarse -->
     <Button
@@ -51,5 +59,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/register_button_text" />
+    <!-- Botón para login -->
+    <Button
+        android:id="@+id/tv_login_link"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/volver_login" />
 
 </LinearLayout>

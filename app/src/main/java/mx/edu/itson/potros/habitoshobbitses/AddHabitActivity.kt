@@ -1,6 +1,6 @@
 package mx.edu.itson.potros.habitoshobbitses
 
-import android.R
+import mx.edu.itson.potros.habitoshobbitses.R
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
