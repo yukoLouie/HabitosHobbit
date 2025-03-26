@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1019425725640",
+    "project_id": "hobbithabit-30599",
+    "storage_bucket": "hobbithabit-30599.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1019425725640:android:8b9ed61e73edff8082d9fd",
+        "android_client_info": {
+          "package_name": "potros.itson.edu.mx"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCFlzfaXAYzIX2qwp9snEJ9hu1sSDyax1I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
