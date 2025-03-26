@@ -35,7 +35,7 @@
         android:text="@string/btn_inicio"
         android:layout_marginTop="8dp"/>
 
-    <TextView
+    <Button
         android:id="@+id/tv_registrar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

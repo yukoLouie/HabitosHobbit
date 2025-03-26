@@ -1,15 +1,16 @@
 {
   "project_info": {
     "project_number": "1019425725640",
+    "firebase_url": "https://hobbithabit-30599-default-rtdb.firebaseio.com",
     "project_id": "hobbithabit-30599",
     "storage_bucket": "hobbithabit-30599.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1019425725640:android:8b9ed61e73edff8082d9fd",
+        "mobilesdk_app_id": "1:1019425725640:android:80b71e1de8df943a82d9fd",
         "android_client_info": {
-          "package_name": "potros.itson.edu.mx"
+          "package_name": "mx.edu.itson.potros.habitoshobbitses"
         }
       },
       "oauth_client": [],

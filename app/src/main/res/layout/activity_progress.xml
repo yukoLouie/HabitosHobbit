@@ -16,17 +16,9 @@
         android:gravity="center"
         android:layout_marginBottom="16dp" />
     <!-- Lista de Hábitos -->
-    <ListView
-        android:id="@+id/lv_habits"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
+
     <!-- Botón para Añadir Hábito -->
-    <Button
-        android:id="@+id/btn_add_habit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/add_habit_button" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -52,7 +44,7 @@
         android:id="@+id/btn_filter_progress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/filter_button" />
+        android:text="@string/filtrar_por_categoria" />
     <!-- Selector de fechas -->
     <Button
         android:id="@+id/btn_filtrar"
