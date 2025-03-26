@@ -50,5 +50,8 @@
     <string name="btnRegistrar">Registrar</string>
     <string name="btnGuardar">Guardar</string>
     <string name="btnCancelar">Cancelar</string>
+    <string name="filter_button">filtrar fechas\n</string>
+    <string name="add_habit_button">agregar habito</string>
+    <string name="main_title">Inicio</string>
 
 </resources>
