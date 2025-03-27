@@ -37,6 +37,7 @@
     <string name="progreso_semanal">Progreso Semanal</string>
     <string name="progreso_mensual">Progreso Mensual</string>
     <string name="filtrar_por_fecha">Filtrar por fecha</string>
+    <string name="filtrar_por_categoria">Filtrar por categoria</string>
 
 
     <string name="register_title">Registrar Cuenta</string>
@@ -53,5 +54,6 @@
     <string name="filter_button">filtrar fechas\n</string>
     <string name="add_habit_button">agregar habito</string>
     <string name="main_title">Inicio</string>
+    <string name="habit_icon">habits for hobbits</string>
 
 </resources>

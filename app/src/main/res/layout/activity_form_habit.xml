@@ -1,15 +1,16 @@
-<?xml version="1.0" encoding="utf-8"?>
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="#eab676"
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        >
 
         <!-- Nombre del hábito -->
         <EditText
@@ -38,12 +39,40 @@
             android:inputType="number"
             android:layout_marginBottom="8dp" />
 
+        <!-- Hora de recordatorio -->
+        <EditText
+            android:id="@+id/et_reminder_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Hora de recordatorio (opcional)"
+            android:inputType="none"
+            android:focusable="false"
+            android:layout_marginBottom="8dp" />
+
         <!-- Selector de Categoría -->
         <Spinner
             android:id="@+id/spinner_category"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp" />
+            android:layout_marginBottom="8dp" />
+
+        <!-- Nueva categoría -->
+        <EditText
+            android:id="@+id/et_new_category"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nueva categoría (opcional)"
+            android:inputType="text"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Selector de Ícono o Color -->
+        <TextView
+            android:id="@+id/tv_icono_color"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Seleccionar Ícono o Color"
+            android:gravity="center"
+            android:layout_marginBottom="8dp" />
 
         <!-- Botón Guardar -->
         <Button
@@ -51,7 +80,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Guardar"
-            android:layout_marginBottom="8dp" />
+            android:layout_marginBottom="8dp"
+            android:background="#c96527"
+            />
 
         <!-- Botón Cancelar -->
         <Button
@@ -59,15 +90,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Cancelar"
-            android:layout_marginBottom="8dp" />
-        <TextView
-            android:id="@+id/tv_icono_color"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Seleccionar Ícono o Color"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:layout_marginBottom="16dp" />
-
+            android:layout_marginBottom="8dp"
+            android:background="#c96527"
+            />
     </LinearLayout>
 </ScrollView>

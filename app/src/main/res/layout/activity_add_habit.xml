@@ -3,7 +3,9 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="#eab676"
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -61,14 +63,18 @@
             android:id="@+id/btn_guardar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/btn_guardar"/>
+            android:text="@string/btn_guardar"
+            android:background="#c96527"
+            />
 
         <Button
             android:id="@+id/btn_cancelar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/btn_cancelar"
-            android:layout_marginTop="8dp"/>
+            android:layout_marginTop="8dp"
+            android:background="#c96527"
+            />
 
     </LinearLayout>
 </ScrollView>

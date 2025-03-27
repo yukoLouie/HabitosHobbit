@@ -10,15 +10,16 @@ import androidx.appcompat.app.AppCompatActivity
 class AddHabitActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_add_habit)
+        setContentView(R.layout.activity_form_habit)
 
         val btnGuardar = findViewById<Button>(R.id.btn_guardar)
         val btnCancelar = findViewById<Button>(R.id.btn_cancelar)
 
-        // Guardar hábito
-        btnGuardar.setOnClickListener { v: View? -> }
-
-        // Cancelar
-        btnCancelar.setOnClickListener { v: View? -> finish() }
-    }
+        // Código avanzado comentado
+        /*
+        val btnGuardar = findViewById<Button>(R.id.btn_guardar)
+        btnGuardar.setOnClickListener {
+            // Lógica para guardar el hábito
+        }
+        */}
 }

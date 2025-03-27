@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    android:background="@color/windowBackground">
+    android:background="#eab676"
+    >
 
     <!-- Título de la ventana -->
     <TextView
@@ -58,12 +59,15 @@
         android:id="@+id/btn_register"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/register_button_text" />
+        android:text="@string/register_button_text"
+        android:background="#c96527"
+        />
     <!-- Botón para login -->
     <Button
         android:id="@+id/tv_login_link"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#c96527"
         android:text="@string/volver_login" />
 
 </LinearLayout>

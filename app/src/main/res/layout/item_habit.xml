@@ -1,48 +1,38 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:padding="8dp">
+    android:orientation="vertical"
+    android:padding="8dp"
+    >
 
-    <ImageView
-        android:id="@+id/iv_habit_icon"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginEnd="8dp"
-        android:contentDescription="@string/habit_icon" />
-
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_weight="1">
-
-        <TextView
-            android:id="@+id/tv_habit_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Nombre del hábito"
-            android:textStyle="bold"
-            android:layout_marginBottom="4dp" />
-
-        <TextView
-            android:id="@+id/tv_habit_category"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Categoría" />
-
-        <TextView
-            android:id="@+id/tv_habit_frequency"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Frecuencia semanal" />
-    </LinearLayout>
-
-    <CheckBox
-        android:id="@+id/cb_habit_completed"
+    <!-- Nombre del hábito -->
+    <TextView
+        android:id="@+id/tv_habit_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Completado" />
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <!-- Categoría -->
+    <TextView
+        android:id="@+id/tv_habit_category"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp" />
+
+    <!-- Frecuencia semanal -->
+    <TextView
+        android:id="@+id/tv_habit_frequency"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp" />
+
+    <!-- Estado actual -->
+    <TextView
+        android:id="@+id/tv_habit_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:textStyle="italic" />
 </LinearLayout>
