@@ -13,6 +13,7 @@ import com.github.mikephil.charting.charts.BarChart
 import com.github.mikephil.charting.data.BarData
 import com.github.mikephil.charting.data.BarDataSet
 import com.github.mikephil.charting.data.BarEntry
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 class HabitsActivity : AppCompatActivity() {
     private lateinit var listView: ListView
@@ -66,38 +67,43 @@ class HabitsActivity : AppCompatActivity() {
     }
 
     private fun cargarHabitosDesdeFirebase() {
-        databaseReference.addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(snapshot: DataSnapshot) {
-                habitList.clear()
-                for (habitSnapshot in snapshot.children) {
-                    val habit = habitSnapshot.getValue(Habit::class.java)
-                    habit?.let { habitList.add(it) }
+        val userId = FirebaseAuth.getInstance().currentUser?.uid ?: return
+        databaseReference.orderByChild("userId").equalTo(userId)
+            .addValueEventListener(object : ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    habitList.clear()
+                    for (habitSnapshot in snapshot.children) {
+                        val habit = habitSnapshot.getValue(Habit::class.java)
+                        habit?.let { habitList.add(it) }
+                    }
+                    habitAdapter.notifyDataSetChanged()
+                    cargarGraficaDiaria()
                 }
-                habitAdapter.notifyDataSetChanged()
-                cargarGraficaDiaria()
-            }
 
-            override fun onCancelled(error: DatabaseError) {
-                Toast.makeText(this@HabitsActivity, "Error al cargar los hábitos", Toast.LENGTH_SHORT).show()
-            }
-        })
+                override fun onCancelled(error: DatabaseError) {
+                    Toast.makeText(this@HabitsActivity, "Error al cargar los hábitos", Toast.LENGTH_SHORT).show()
+                }
+            })
     }
 
-    private fun actualizarEstadoHabit(habit: Habit) {
-        if (habit.completed) {
-            habit.streak += 1 // Incrementa la racha
-        } else {
-            habit.streak = 0 // Reinicia la racha
-        }
-        if (habit.streak == 7) {
-            Toast.makeText(this, "¡Felicidades! Has alcanzado una racha de 7 días.", Toast.LENGTH_LONG).show()
-        }
 
+    private fun actualizarEstadoHabit(habit: Habit) {
+        // Si se marca como completado, incrementa la racha; en caso contrario, reinicia
+        if (habit.completed) {
+            habit.streak += 1
+        } else {
+            habit.streak = 0
+        }
+        // Si la racha alcanza 7, muestro una recompensa
+        if (habit.streak == 7) {
+            Toast.makeText(this, "¡Felicidades! Has completado una racha de 7 días.", Toast.LENGTH_LONG).show()
+        }
         databaseReference.child(habit.id).setValue(habit)
             .addOnFailureListener {
                 Toast.makeText(this, "Error al actualizar el hábito", Toast.LENGTH_SHORT).show()
             }
     }
+
 
     private fun cargarGraficaDiaria() {
         val completedCount = habitList.count { it.completed }

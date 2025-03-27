@@ -48,6 +48,7 @@ dependencies {
     implementation("com.github.PhilJay:MPAndroidChart:3.1.0") // Última versión disponible
     implementation("com.google.firebase:firebase-database-ktx:20.3.0")
     implementation("com.google.android.filament:filament-android:1.24.0")
+    implementation(libs.firebase.auth.ktx)
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
