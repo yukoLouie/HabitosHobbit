@@ -1,32 +1,27 @@
 package mx.edu.itson.potros.habitoshobbitses
 
-import android.app.AlertDialog
-import android.app.TimePickerDialog
-import mx.edu.itson.potros.habitoshobbitses.R
-import android.os.Bundle
-import android.view.View
-import android.widget.Button
-import android.widget.NumberPicker
-import android.widget.Toast
+import android.app.*
+import android.content.pm.PackageManager
+import android.icu.util.Calendar
+import android.os.*
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
-import java.util.Calendar
-
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 
 class AddHabitActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_form_habit)
+        setContentView(R.layout.activity_add_habit)
 
-        val btnGuardar = findViewById<Button>(R.id.btn_guardar)
-        val btnCancelar = findViewById<Button>(R.id.btn_cancelar)
+        pedirPermisosNotificaciones()
 
-        // Código avanzado comentado
-        /*
-        val btnGuardar = findViewById<Button>(R.id.btn_guardar)
-        btnGuardar.setOnClickListener {
-            // Lógica para guardar el hábito
+        val btnProgramar = findViewById<Button>(R.id.btn_programar_habito)
+        btnProgramar.setOnClickListener {
+            mostrarTimePicker()
         }
-        */}
+    }
 
     private fun mostrarTimePicker() {
         val calendar = Calendar.getInstance()
@@ -34,13 +29,14 @@ class AddHabitActivity : AppCompatActivity() {
         val minutoActual = calendar.get(Calendar.MINUTE)
 
         TimePickerDialog(
-            this@AddHabitActivity, // Aquí especificamos claramente el contexto
+            this@AddHabitActivity,
             { _, hourOfDay, minute ->
                 val inicioCalendar = Calendar.getInstance().apply {
                     set(Calendar.HOUR_OF_DAY, hourOfDay)
                     set(Calendar.MINUTE, minute)
                     set(Calendar.SECOND, 0)
                 }
+
                 mostrarDuracionPicker(inicioCalendar.timeInMillis)
             },
             horaActual,
@@ -50,7 +46,7 @@ class AddHabitActivity : AppCompatActivity() {
     }
 
     private fun mostrarDuracionPicker(inicioEnMillis: Long) {
-        val numberPicker = NumberPicker(this@AddHabitActivity).apply {
+        val picker = NumberPicker(this@AddHabitActivity).apply {
             minValue = 1
             maxValue = 120
             value = 15
@@ -58,25 +54,30 @@ class AddHabitActivity : AppCompatActivity() {
 
         AlertDialog.Builder(this@AddHabitActivity)
             .setTitle("Duración del hábito (minutos)")
-            .setView(numberPicker)
+            .setView(picker)
             .setPositiveButton("Aceptar") { _, _ ->
-                val duracion = numberPicker.value
-
+                val duracion = picker.value
                 NotificationScheduler.programarInicioYFinDeHábito(
                     context = this@AddHabitActivity,
                     inicioEnMilis = inicioEnMillis,
                     duracionEnMinutos = duracion,
                     tituloInicio = "¡Hora del hábito!",
-                    mensajeInicio = "Es hora de iniciar tu hábito 🕒",
-                    tituloFin = "¡Bien hecho!",
-                    mensajeFin = "Completaste tu hábito ✅"
+                    mensajeInicio = "Es hora de comenzar tu hábito 💪",
+                    tituloFin = "¡Buen trabajo!",
+                    mensajeFin = "Terminaste tu hábito 🏁"
                 )
-
-                Toast.makeText(this@AddHabitActivity, "Hábito programado", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Notificación programada", Toast.LENGTH_SHORT).show()
             }
             .setNegativeButton("Cancelar", null)
             .show()
     }
 
+    private fun pedirPermisosNotificaciones() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.POST_NOTIFICATIONS)
+                != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(this, arrayOf(android.Manifest.permission.POST_NOTIFICATIONS), 1)
+            }
+        }
+    }
 }
-

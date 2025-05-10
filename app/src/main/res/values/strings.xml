@@ -55,5 +55,7 @@
     <string name="add_habit_button">agregar habito</string>
     <string name="main_title">Inicio</string>
     <string name="habit_icon">habits for hobbits</string>
+    <string name="btn_programar_habito">Programar hábito</string>
+
 
 </resources>

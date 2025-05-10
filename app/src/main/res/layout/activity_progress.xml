@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="#eab676">
 
     <!-- Título -->
     <TextView
@@ -27,25 +28,26 @@
         android:layout_gravity="center"/>
 
     <!-- Gráfico -->
-
-    <!-- Gráfica -->
     <com.github.mikephil.charting.charts.BarChart
         android:id="@+id/bar_chart_monthly"
-        android:layout_width="284dp"
-        android:layout_height="157dp"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
         android:layout_marginTop="16dp" />
 
+    <!-- Gráfica -->
     <com.github.mikephil.charting.charts.PieChart
         android:id="@+id/pie_chart_weekly"
-        android:layout_width="312dp"
-        android:layout_height="110dp"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
         android:layout_marginBottom="16dp" />
     <!-- Filtro por Fecha -->
     <Button
         android:id="@+id/btn_filter_progress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/filtrar_por_categoria" />
+        android:text="@string/filtrar_por_categoria"
+        android:background="#c96527"
+        />
     <!-- Selector de fechas -->
     <Button
         android:id="@+id/btn_filtrar"
@@ -53,5 +55,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="16dp"
-        android:text="@string/filtrar_por_fecha" />
+        android:text="@string/filtrar_por_fecha"
+        android:background="#c96527"
+        />
 </LinearLayout>
