@@ -10,18 +10,12 @@ import androidx.core.app.NotificationCompat
 class HabitReminderReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context, intent: Intent) {
         val habitName = intent.getStringExtra("habit_name") ?: "Hábito"
-        Log.d("HabitReminderReceiver", "Notification triggered for: $habitName")
-
-        val notificationManager = context.getSystemService(NotificationManager::class.java)
-
-        val notification = NotificationCompat.Builder(context, "habit_reminder")
-            .setSmallIcon(R.drawable.ic_notification)
-            .setContentTitle("¡Hora de completar tu hábito!")
-            .setContentText("Recuerda: $habitName.")
-            .setPriority(NotificationCompat.PRIORITY_HIGH)
-            .build()
-
-        notificationManager.notify(habitName.hashCode(), notification)
+        NotificationHelper.showNotification(
+            context,
+            habitName.hashCode(),
+            "¡Hora de completar tu hábito!",
+            "Recuerda: $habitName."
+        )
     }
 }
 

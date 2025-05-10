@@ -57,6 +57,11 @@ class AddHabitActivity : AppCompatActivity() {
             .setView(picker)
             .setPositiveButton("Aceptar") { _, _ ->
                 val duracion = picker.value
+                val notificationIdStart = (inicioEnMillis % 100000).toInt()
+                val notificationIdEnd = ((inicioEnMillis + duracion * 60 * 1000) % 100000).toInt()
+
+                android.util.Log.d("AddHabitActivity", "Scheduling habit notifications: startId=$notificationIdStart, endId=$notificationIdEnd, startTime=$inicioEnMillis, duration=$duracion")
+
                 NotificationScheduler.programarInicioYFinDeHábito(
                     context = this@AddHabitActivity,
                     inicioEnMilis = inicioEnMillis,
@@ -64,7 +69,9 @@ class AddHabitActivity : AppCompatActivity() {
                     tituloInicio = "¡Hora del hábito!",
                     mensajeInicio = "Es hora de comenzar tu hábito 💪",
                     tituloFin = "¡Buen trabajo!",
-                    mensajeFin = "Terminaste tu hábito 🏁"
+                    mensajeFin = "Terminaste tu hábito 🏁",
+                    notificationIdStart = notificationIdStart,
+                    notificationIdEnd = notificationIdEnd
                 )
                 Toast.makeText(this, "Notificación programada", Toast.LENGTH_SHORT).show()
             }
