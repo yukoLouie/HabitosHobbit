@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HabitsActivity">
+    tools:context=".HabitsActivity"
+    android:background="#eab676">
 
     <!-- Título -->
     <TextView
@@ -16,7 +17,8 @@
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        />
 
     <!-- Lista de hábitos -->
 
@@ -58,7 +60,8 @@
         app:layout_constraintBottom_toTopOf="@+id/bar_chart"
         app:layout_constraintStart_toEndOf="@+id/btn_add_habit"
         app:layout_constraintTop_toBottomOf="@+id/lv_habits"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        />
 
     <com.github.mikephil.charting.charts.BarChart
         android:id="@+id/bar_chart"
